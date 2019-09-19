@@ -33,9 +33,10 @@ a {
     font-weight: bold;
     text-transform: uppercase;
     background: $main-color;
-    padding: 1rem;
     display: inline-block;
     width: 250px;
+    padding: 1rem;
+    cursor: pointer;
 }
 
 .btn-light {
@@ -55,7 +56,7 @@ a {
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     width: 100%;
     top: 0;
     padding: 0.5rem;
@@ -92,18 +93,13 @@ a {
             top: 70%;
             left: 29%;
             padding: 1rem;
-            .btn {
-                margin-right: 6rem;
+            a {
+                color: #fff;
+                margin-right: 5rem;
                 transition: all 0.6s;
-                a {
-                    transition: all 0.6s;
-                    color: #fff;
-                }
                 &:hover {
                     background: #fff;
-                }
-                &:hover a {
-                    color: black;
+                    color: $main-color;
                 }
             }
         }
@@ -144,37 +140,87 @@ a {
         }
     }
     &-donator {
-        margin-top: 3rem;
-        text-align: center;
+        padding-bottom: 1rem;
+        .container {
+            max-width: 1300px;
+        }
+        .btn {
+            margin-top: 2rem;
+        }
+        background: url("/dist/img/gta\ ucurum.jpg") no-repeat center center/cover;
         h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
             padding: 1rem;
+            font-size: 3rem;
             color: $main-color;
-            margin-bottom: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         .donators {
+            margin-top: 2rem;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            .donator {
-                line-height: 1.8;
-                box-shadow: h2 {
-                    font-size: 2.4rem;
-                    text-transform: uppercase;
-                }
-                padding: 5rem 1rem;
-                border: 1px solid $main-color;
-                border-radius: 5px;
-                transition: all 1s;
-                -webkit-box-shadow: 0px 0px 21px 13px rgba(0, 0, 0, 0.19);
-                -moz-box-shadow: 0px 0px 21px 13px rgba(0, 0, 0, 0.19);
-                box-shadow: 0px 0px 21px 13px rgba(0, 0, 0, 0.19);
+            color: #fff;
+            img {
+                width: 200px;
+            }
+            a {
+                color: #fff;
+                transition: all 0.7s;
                 &:hover {
                     background: $main-color;
-                    color: #fff;
+                    color: black;
+                }
+            }
+            .donator {
+                margin: 0 auto;
+                padding: 2rem;
+                text-align: center;
+                font-weight: bold;
+                text-transform: uppercase;
+                transition: all 0.6s;
+                color: black;
+                background: #eee;
+                &:nth-child(1) {
+                    background: #cd7f32;
+                    .btn {
+                        margin-top: 3rem;
+                    }
+                }
+                &:nth-child(2) {
+                    background: silver;
+                }
+                &:nth-child(3) {
+                    background: gold;
+                }
+                &:hover {
+                    background: #fff;
+                    color: $main-color;
+                    transform: scale(1.1);
+                }
+                &:hover h4 {
+                    color: $main-color;
+                }
+                h4 {
+                    font-size: 1.5rem;
+                    color: $main-color;
+                    transition: all 0.6s;
+                }
+                .donator-content {
+                    line-height: 1.5;
+                    font-size: 1rem;
+                }
+                .price {
+                    font-size: 1.5rem;
                 }
             }
         }
@@ -182,7 +228,6 @@ a {
 }
 
 footer {
-    margin-top: 1rem;
     background: $main-color;
     color: #fff;
     display: flex;
